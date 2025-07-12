@@ -11,6 +11,7 @@ import Apperror from './apps/shares/Apperror';
 import Mainpage from './apps/appmodules/dashboard/Mainpage';
 import Homepage from './apps/appmodules/dashboard/Homepage';
 import Dashboardpage from './apps/appmodules/dashboard/Dashboardpage';
+import Employeepage from './apps/appmodules/dashboard/Employeepage';
 
 
 
@@ -25,6 +26,7 @@ root.render(
             <Route path='landing' element={<Mainpage/>}>
                 <Route path='' element={<Homepage/>}></Route>
                 <Route path='dashboard' element={<Dashboardpage/>}></Route>
+                <Route path='employees' element={<Employeepage/>}></Route> 
                 <Route path='*' element={<Apperror/>}></Route>
             </Route>
 
