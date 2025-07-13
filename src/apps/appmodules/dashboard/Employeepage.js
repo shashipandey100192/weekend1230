@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { MdOutlinePreview } from "react-icons/md";
+import { FaUserEdit } from "react-icons/fa";
+import { AiFillDelete } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
 
 function Employeepage() {
@@ -54,7 +58,11 @@ function Employeepage() {
                                  <td>{u.birthDate}</td>
                                   <td>{u.phone}</td>
                                   <td><img src={u.image} width={30} alt={u.id}/></td>
-                                   <td></td>
+                                   <td>
+                                    <Link to={`userdetails/`+u.id} className='btn btn-primary btn-sm'> <MdOutlinePreview/></Link>
+                                      <Link to="" className='btn btn-warning btn-sm ms-2'> <FaUserEdit/></Link>
+                                        <Link to="" className='btn btn-danger btn-sm ms-2'> <AiFillDelete/></Link>
+                                   </td>
                             </tr>
                                 )
                             })}

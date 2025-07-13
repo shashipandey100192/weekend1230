@@ -2,8 +2,12 @@ import React from 'react'
 import { FaUserTie } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { useForm } from "react-hook-form"
 
 function Userregistor() {
+     const {register,handleSubmit} = useForm()
+
+
 
   return (
     <div className='container'>

@@ -12,6 +12,7 @@ import Mainpage from './apps/appmodules/dashboard/Mainpage';
 import Homepage from './apps/appmodules/dashboard/Homepage';
 import Dashboardpage from './apps/appmodules/dashboard/Dashboardpage';
 import Employeepage from './apps/appmodules/dashboard/Employeepage';
+import UserDetailspage from './apps/appmodules/dashboard/UserDetailspage';
 
 
 
@@ -27,6 +28,7 @@ root.render(
                 <Route path='' element={<Homepage/>}></Route>
                 <Route path='dashboard' element={<Dashboardpage/>}></Route>
                 <Route path='employees' element={<Employeepage/>}></Route> 
+                <Route path='employees/userdetails/:id' element={<UserDetailspage/>}></Route>
                 <Route path='*' element={<Apperror/>}></Route>
             </Route>
 
