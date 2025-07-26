@@ -14,6 +14,7 @@ function Employeepage() {
         axios.get("https://dummyjson.com/users").then((d) => {
             console.log(d.data.users);
             updateuserlist(d.data.users)
+            localStorage.setItem("apidata",JSON.stringify(d.data.users));
         })
     }
 

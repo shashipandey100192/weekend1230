@@ -13,6 +13,8 @@ import Homepage from './apps/appmodules/dashboard/Homepage';
 import Dashboardpage from './apps/appmodules/dashboard/Dashboardpage';
 import Employeepage from './apps/appmodules/dashboard/Employeepage';
 import UserDetailspage from './apps/appmodules/dashboard/UserDetailspage';
+import Parentpage from './apps/appmodules/dashboard/props/Parentpage';
+import Mygraphpage from './apps/appmodules/dashboard/Mygraphpage';
 
 
 
@@ -29,6 +31,8 @@ root.render(
                 <Route path='dashboard' element={<Dashboardpage/>}></Route>
                 <Route path='employees' element={<Employeepage/>}></Route> 
                 <Route path='employees/userdetails/:id' element={<UserDetailspage/>}></Route>
+                <Route path='props' element={<Parentpage/>}></Route>
+                <Route path='graph' element={<Mygraphpage/>}></Route>
                 <Route path='*' element={<Apperror/>}></Route>
             </Route>
 
