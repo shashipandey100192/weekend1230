@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import { lazy,Suspense } from 'react';
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import "./apps/css/global.css";
+// import "./output.css";
 import Welcomeapp from './apps/Welcomeapp';
 import Userlogin from './apps/appmodules/users/auth/Userlogin';
 import Userregistor from './apps/appmodules/users/auth/Userregistor';
@@ -15,6 +17,9 @@ import Employeepage from './apps/appmodules/dashboard/Employeepage';
 import UserDetailspage from './apps/appmodules/dashboard/UserDetailspage';
 import Parentpage from './apps/appmodules/dashboard/props/Parentpage';
 import Mygraphpage from './apps/appmodules/dashboard/Mygraphpage';
+import Paginationpage from './apps/appmodules/dashboard/Paginationpage';
+// import Lazypage from './apps/appmodules/dashboard/Lazypage';
+const Lazypage = lazy(()=>import('./apps/appmodules/dashboard/Lazypage'));
 
 
 
@@ -33,9 +38,15 @@ root.render(
                 <Route path='employees/userdetails/:id' element={<UserDetailspage/>}></Route>
                 <Route path='props' element={<Parentpage/>}></Route>
                 <Route path='graph' element={<Mygraphpage/>}></Route>
+                <Route path='pazination' element={<Paginationpage/>}></Route>
+                <Route path='lazypage' element={
+                  <Suspense fallback={<h1 className='myloader'>Loading Content...</h1>}>
+                     <Lazypage/> 
+                  </Suspense>
+                }></Route>
                 <Route path='*' element={<Apperror/>}></Route>
             </Route>
-
+                
 
             <Route path='*' element={<Apperror/>}></Route>
         </Routes>

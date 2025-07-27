@@ -18,6 +18,8 @@ function Appsidenav() {
                             <li><Link to="invoice" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Invoice</Link></li>
                             <li><Link to="props" class="link-body-emphasis d-inline-flex text-decoration-none rounded">props</Link></li>
                             <li><Link to="graph" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Charts</Link></li>
+                            <li><Link to="lazypage" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Lazyloading</Link></li>
+                            <li><Link to="pazination" class="link-body-emphasis d-inline-flex text-decoration-none rounded">paginationtable</Link></li>
                         </ul>
                     </div>
                 </li>
