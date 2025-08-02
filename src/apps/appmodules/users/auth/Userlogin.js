@@ -4,6 +4,7 @@ import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaCheck } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
+import { toast,ToastContainer } from 'react-toastify';
 
 function Userlogin() {
 
@@ -31,8 +32,11 @@ const formvalidation = ()=>{
     {
        if(email==="admin" && pass==="123")
        {
-        alert("welcome");
-        mynav("/landing");
+        // alert("welcome");
+        toast.success("Welcome to Dashboard",{autoClose:2000,theme: "dark",position: "top-left"});
+        setTimeout(()=>{
+            mynav("/landing");
+        },2000);
        }
        else
        {
@@ -51,6 +55,7 @@ const formvalidation = ()=>{
                         <div className='row'>
                             <div className='col-12 text-center'>
                                 <h1> <FaUserTie/></h1>
+                                <ToastContainer/>
                                 <p className='h5'>User Login Page</p>
                             </div>
                             <div className='col-md-12 mt-3'>
