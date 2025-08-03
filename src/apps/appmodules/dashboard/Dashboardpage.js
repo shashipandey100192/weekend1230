@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Mygraphpage from './Mygraphpage';
+import { useSelector,useDispatch } from 'react-redux';
+import { abc } from './redux/Myactionsflist';
 
 function Dashboardpage() {
     const [localdata,setlocaldata]=useState([]);
@@ -32,6 +34,9 @@ function Dashboardpage() {
   useEffect(()=>{
     getmylocadata();
   },[]);
+    const xyz = useDispatch();
+
+  const a = useSelector((state) => state.counter.age);
 
 
   return (
@@ -65,7 +70,8 @@ function Dashboardpage() {
           <div class="card text-bg-danger mb-3 shadow">
             <div class="card-body">
               <h5 class="card-title">Total Employees</h5>
-              <h1>800</h1>
+              <h1> Age: {a}</h1>
+              <button onClick={() => xyz(abc())}> agecount </button>
             </div>
           </div>
         </div>

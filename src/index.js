@@ -18,6 +18,8 @@ import UserDetailspage from './apps/appmodules/dashboard/UserDetailspage';
 import Parentpage from './apps/appmodules/dashboard/props/Parentpage';
 import Mygraphpage from './apps/appmodules/dashboard/Mygraphpage';
 import Paginationpage from './apps/appmodules/dashboard/Paginationpage';
+import { Provider } from 'react-redux';
+import { actionstore } from './apps/appmodules/dashboard/redux/Mystore';
 // import Lazypage from './apps/appmodules/dashboard/Lazypage';
 const Lazypage = lazy(()=>import('./apps/appmodules/dashboard/Lazypage'));
 
@@ -26,6 +28,7 @@ const Lazypage = lazy(()=>import('./apps/appmodules/dashboard/Lazypage'));
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Provider store={actionstore}>
     <BrowserRouter>
         <Routes>
             <Route path='' element={<Welcomeapp/>}></Route>
@@ -53,7 +56,7 @@ root.render(
     
     
     </BrowserRouter>
- 
+ </Provider>
 
 
   </React.StrictMode>
